@@ -26,8 +26,29 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        style={{
+          backgroundImage: "url('/public/environment2.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed', // optional: parallax effect
+          backgroundRepeat: 'no-repeat',
+          minHeight: '100vh',
+          margin: 0,
+        }}>
         {children}
+        <script 
+        dangerouslySetInnerHTML={{
+          __html:`
+           (function(){
+            const theme =  localStorage.getItem('theme')||
+                          (window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+              if(theme ==='dark'){
+                document.documentElement.classList.add('dark');
+              }
+           })();
+           `,
+        }}
+        />
       </body>
     </html>
   );
