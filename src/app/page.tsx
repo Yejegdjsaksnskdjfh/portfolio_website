@@ -1,14 +1,10 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-        <Image
-          className="dark:invert"
-          src="/environment2.jpg"
-          alt=" logo"
-          width={100}
-          height={20}
-          priority
-        />
+    <main className="min-h-screen p-8">
+      <h1 className="text-4xl">Welcome to my portfolio</h1>
+      {
+       <h3>COntent here ..... </h3>
+      }
+    </main>
   );
 }

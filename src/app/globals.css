@@ -1,0 +1,32 @@
+/* src/app/globals.css */
+/* src/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ✅ Reset default spacing */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* prevents horizontal scroll */
+}
+
+/* Full-viewport background */
+body {
+  background-color: #000000; /* your dark fallback */
+  background-image: url('/environment2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100dvh; /* 👈 use dvh instead of vh (see note below) */
+}
+
+main {
+  background: rgba(255, 255, 255, 0.88);
+  min-height: 100dvh;
+  padding: 2rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
